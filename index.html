@@ -34,6 +34,70 @@
       </div>
       
     </div>
+
+     <div class="wrapper different">
+      <div class="tabsmenu ">
+        <div class="menuelement">
+          <label class="btn" for="id11">Tabs first</label>
+        </div>
+        <div class="menuelement">
+          <label class="btn" for="id12">Tabs second</label>
+        </div>
+        <div class="menuelement">
+          <label class="btn" for="id13">Tabs third</label>
+        </div>
+      </div>
+      <div class="tabcontent">
+        <input type="radio" name="tabs2" id="id11" checked="checked"/>
+        <div class="content">First content</div>
+      </div>
+      <div class="tabcontent">
+        <input type="radio" name="tabs2" id="id12" />
+        <div class="content">Second content</div>
+      </div>
+      <div class="tabcontent">
+        <input type="radio" name="tabs2" id="id13" />
+        <div class="content">Third content
+
+          <p>this time longer one</p>
+        </div>
+        
+      </div>
+      
+    </div>
+
+
+    <div class="wrapper thirdanimation">
+      <div class="tabsmenu ">
+        <div class="menuelement">
+          <label class="btn" for="id21">Tabs first</label>
+        </div>
+        <div class="menuelement">
+          <label class="btn" for="id22">Tabs second</label>
+        </div>
+        <div class="menuelement">
+          <label class="btn" for="id23">Tabs third</label>
+        </div>
+      </div>
+      <div class="tabcontent">
+        <input type="radio" name="tabs3" id="id21" checked="checked"/>
+        <div class="content">First content</div>
+      </div>
+      <div class="tabcontent">
+        <input type="radio" name="tabs3" id="id22" />
+        <div class="content">Second content</div>
+      </div>
+      <div class="tabcontent">
+        <input type="radio" name="tabs3" id="id23" />
+        <div class="content">Third content
+
+          <p>this time longer one</p>
+        </div>
+        
+      </div>
+      
+    </div>
+
   </body>
   <style>
   html, body, *{
@@ -80,7 +144,48 @@
   /* display:none;*/
   
   }
-  
+  .different{
+    overflow:hidden;
+  }
+  .different .content{
+       max-height:none;
+       transform:translateX(-100vw);
+       position:absolute;
+  }
+  .different input[type="radio"]:checked~.content{
+       max-height:none;
+       transform:translateX(100vw);
+       position:absolute;
+  }
+  .different input[type="radio"]:checked+.content{
+    -webkit-transition: all 500ms linear 500ms;
+  -moz-transition: all 500ms linear 500ms;
+  -o-transition: all 500ms linear 500ms;
+  transition: all 500ms linear 500ms;
+       max-height:none;
+       transform:translateX(0);
+       position:relative;
+  }
+
+  .thirdanimation .content{
+       max-height:none;
+       transform:translateX(-100vw);
+       position:absolute;
+  }
+  .thirdanimation input[type="radio"]:checked~.content{
+       max-height:none;
+       transform:translateX(100vw);
+       position:absolute;
+  }
+  .thirdanimation input[type="radio"]:checked+.content{
+       max-height:none;
+       transform:translateX(0);
+       position:relative;
+  }
+
+
+
+
   input[type="radio"]:checked+.content{
   -webkit-transition: all 200ms linear 200ms;
   -moz-transition: all 200ms linear 200ms;
