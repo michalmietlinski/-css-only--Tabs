@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="tabsmenu">
+        <div class="menuelement">
+          <label class="btn" for="id1">Tabs first</label>
+        </div>
+        <div class="menuelement">
+          <label class="btn" for="id2">Tabs second</label>
+        </div>
+        <div class="menuelement">
+          <label class="btn" for="id3">Tabs third</label>
+        </div>
+      </div>
+      <div class="tabcontent">
+        <input type="radio" name="tabs" id="id1" checked="checked"/>
+        <div class="content">First content</div>
+      </div>
+      <div class="tabcontent">
+        <input type="radio" name="tabs" id="id2" />
+        <div class="content">Second content</div>
+      </div>
+      <div class="tabcontent">
+        <input type="radio" name="tabs" id="id3" />
+        <div class="content">Third content
+
+          <p>this time longer one</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </body>
+  <style>
+  html, body, *{
+  box-sizing:border-box;
+  }
+  .wrapper{
+  width:500px;
+  margin:10% auto 0 auto;
+  background:#d5d5d5;
+  position:relative;
+  padding:20px;
+  }
+  .tabcontent > input{
+  visibility:hidden;
+  }
+  .tabcontent >input{
+  display:none;
+  }
+  .wrapper >label:before{
+  content:"";
+  width:15px;
+  height:15px;
+  display:inline-block;
+  border:2px solid #fff;
+  margin-right:10px;
+  top:4px;
+  position:relative;
+  line-height:15px;
+  text-align:center;
+  }
+  .wrapper >input:checked ~ label:before{
+  
+  background:#fff;;
+  }
+  .content{
+  -webkit-transition: all linear ;
+  -moz-transition: all 200ms ;
+  -o-transition: all 200ms ;
+  transition: all 200ms ;
+  max-height:0;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  /* display:none;*/
+  
+  }
+  
+  input[type="radio"]:checked+.content{
+  -webkit-transition: all 200ms linear 200ms;
+  -moz-transition: all 200ms linear 200ms;
+  -o-transition: all 200ms linear 200ms;
+  transition: all 200ms linear 200ms;
+  /*display:block;*/
+  max-height:500px;
+  
+  }
+  .tabsmenu {
+  width:100%;
+  clear:both;
+  }
+  .menuelement{
+  width:auto;
+  display: inline-block
+  }
+  .btn{
+  cursor:pointer;
+  display:inline-block;
+  width:100%;
+  display:block;
+  background:#19c4b1;
+  padding:5px 10px ;
+  }
+  </style>
+</html>
